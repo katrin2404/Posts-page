@@ -1,7 +1,9 @@
-'use strict';
+(function () {
+    'use strict';
 
-angular.module('postsApp').run(['$rootScope', function ($rootScope) {
-    $rootScope.$on('$routeChangeSuccess', function (event, current) {
-        $rootScope.title = current.$$route.title;
-    });
-}]);
+    angular.module('postsApp').run(['$rootScope', function ($rootScope) {
+        $rootScope.$on('$routeChangeSuccess', function (event, current) {
+            $rootScope.title = current.$$route.title;
+        });
+    }]);
+})();

@@ -1,6 +1,11 @@
-'use strict';
+(function () {
+
+    'use strict';
 
 // Define the `postDetail` module
-angular.module('postDetail', [
-  'ngRoute',
-]);
+    angular.module('postDetail', [
+        'ngRoute',
+    ]);
+
+})();
+

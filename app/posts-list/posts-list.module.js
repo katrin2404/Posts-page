@@ -1,4 +1,8 @@
-'use strict';
+(function () {
+
+    'use strict';
 
 // Define the `postsList` module
-angular.module('postsList', []);
+    angular.module('postsList', []);
+})();
+
