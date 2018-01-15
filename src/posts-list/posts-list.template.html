@@ -41,7 +41,7 @@
                 ng-click="vm.currentPage=vm.currentPage-1">
           Previous
         </button>
-        <span>{{vm.currentPage+1}}/{{vm.numberOfPages((vm.posts | filter:vm.searchPost) , vm.pageSize, vm.currentPage)}}</span>
+        <span>{{vm.currentPage+1}} of {{vm.numberOfPages((vm.posts | filter:vm.searchPost) , vm.pageSize, vm.currentPage)}}</span>
         <button class="btn btn-success"
                 ng-disabled="vm.currentPage >= vm.getData((vm.posts | filter:vm.searchPost)).length/vm.pageSize - 1"
                 ng-click="vm.currentPage=vm.currentPage+1">
