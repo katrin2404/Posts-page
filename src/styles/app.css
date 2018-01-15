@@ -1,0 +1,40 @@
+body {
+    padding: 20px;
+}
+
+h1 {
+    border-bottom: 1px solid gray;
+    margin-top: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav-home i{
+    font-size: 50px;
+    text-decoration: none;
+}
+
+a:hover {
+    color: green;
+    transform: scale(0.9);
+    transition: all ease-in-out 0.3s;
+}
+
+li {
+    list-style: none;
+}
+
+li p {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+
+
+.pagination-buttons{
+    text-align: center;
+}

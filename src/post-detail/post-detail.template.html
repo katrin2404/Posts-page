@@ -1,0 +1,31 @@
+<a class="nav-home" href='#!/'>
+  <i class="material-icons text-primary">home</i>
+</a>
+
+<div class="list-group">
+  <h1 class="list-group-item list-group-item-danger">
+    {{vm.post.title}}</h1>
+  <p class="list-group-item list-group-item-warning">
+    <i class="material-icons md-fab">speaker_notes</i>
+    {{vm.post.body}}</p>
+</div>
+
+<ul class="list-group list-group-item list-group-item-action flex-column align-items-start active">
+  <li class="list-group-item-action list-group-item-heading">Comments:</li>
+  <li class="list-group-item list-group-item-action flex-column align-items-start active thumbnail"
+      ng-repeat="comment in vm.post.comments">
+    <p class='list-group-item list-group-item-success row'>
+      <span class="col-md-7">
+        <i class="material-icons">local_library</i>
+        {{comment.name}}</span>
+      <small>
+        <i class="material-icons">face</i>
+        {{comment.email}}
+      </small>
+    </p>
+    <p class="list-group-item list-group-item-info">
+      <i class="material-icons">drafts</i>
+      {{comment.body}}</p>
+  </li>
+</ul>
+
