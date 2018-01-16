@@ -1,11 +1,7 @@
 (function () {
 
   'use strict';
-  angular.module('postsList').controller('PostsListController', PostsListController);
-
-  PostsListController.$inject = ['Pagination', 'PostsListService'];
-
-  function PostsListController(Pagination, PostsListService) {
+  angular.module('postsList').controller('PostsListController', function (Pagination, PostsListService) {
     const vm = this;
 
     vm.posts = [];
@@ -16,14 +12,10 @@
     vm.getData = Pagination.getData;
     vm.numberOfPages = Pagination.numberOfPages;
 
+    PostsListService
+      .loadPosts()
+      .then(posts => vm.posts = posts);
 
-    init();
-
-    function init() {
-      return PostsListService
-        .loadPosts()
-        .then(posts => vm.posts = posts);
-    }
-  }
+  });
 
 })();

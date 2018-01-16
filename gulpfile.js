@@ -130,7 +130,7 @@ gulp.task('build', gulpSequence('clean', ['favIcon', 'js', 'external-js', 'templ
 gulp.task('server', ['build'], () => {
   return gulp.src(conf.dist)
     .pipe(webserver({
-      port: 63345,
+      port: 63347,
       livereload: true,
       open: true,
     }));

@@ -1,32 +1,26 @@
 (function () {
 
-    'use strict';
-    angular.module('postDetail').factory('PostDetailService', PostDetailService);
+  'use strict';
+  angular.module('postDetail').factory('PostDetailService', function ($q, PostDetailRepository) {
 
-    PostDetailService.$inject = ['$q', 'PostDetailRepository'];
+    return {
+      loadDetailsPost,
+    };
 
-    function PostDetailService($q, PostDetailRepository) {
+    function loadDetailsPost(postId) {
 
-        return {
-            loadDetailsPost,
-        };
-
-        function loadDetailsPost(postId) {
-
-            return $q
-                .all({
-                    post: PostDetailRepository.loadDetails(postId),
-                    comments: PostDetailRepository.loadComments(postId),
-                }).then(
-                    ({post, comments}) => {
-
-                            console.log({post, comments});
-                               return  {
-                                    ...post,
-                                    comments
-                                }
-                    }
-                );
-        }
+      return $q
+        .all({
+          post: PostDetailRepository.loadDetails(postId),
+          comments: PostDetailRepository.loadComments(postId),
+        }).then(
+          ({post, comments}) => {
+            return {
+              ...post,
+              comments
+            }
+          }
+        );
     }
+  })
 })();

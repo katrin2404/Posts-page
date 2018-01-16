@@ -3,12 +3,7 @@
   'use strict';
 
 
-  angular.module('postsList').factory('PostsListService', PostsListService);
-
-  PostsListService.$inject = ['$q', 'PostsRepository'];
-
-  function PostsListService($q, PostsRepository) {
-
+  angular.module('postsList').factory('PostsListService', function($q, PostsRepository) {
     return {
       loadPosts,
     };
@@ -28,6 +23,6 @@
         );
 
     }
-  }
+  })
 })();
 
